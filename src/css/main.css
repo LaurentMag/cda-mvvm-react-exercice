@@ -1,1 +1,22 @@
-/*# sourceMappingURL=main.css.map */
+.voyage-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.voyage-unit {
+  padding: 1rem;
+  border-radius: 0.3rem;
+  background-color: rgb(201, 201, 201);
+  min-width: 25rem;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.3rem;
+  background-color: rgb(179, 179, 234);
+}/*# sourceMappingURL=main.css.map */
