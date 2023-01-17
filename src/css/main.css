@@ -2,12 +2,14 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
 .voyage-unit {
   padding: 1rem;
   border-radius: 0.3rem;
-  background-color: rgb(201, 201, 201);
+  background-color: rgb(183, 182, 182);
   min-width: 25rem;
 }
 
@@ -18,5 +20,6 @@
   gap: 0.5rem;
   padding: 1rem;
   border-radius: 0.3rem;
-  background-color: rgb(179, 179, 234);
+  background-color: rgb(108, 108, 125);
+  color: rgb(231, 228, 228);
 }/*# sourceMappingURL=main.css.map */
