@@ -1,13 +1,32 @@
-import React, {Fragment, useState} from "react";
+import React, {Fragment, useEffect, useState} from "react";
 import {Voyage} from "./Voyage";
 
 //new Date().toISOString().split('T')[0]
 
 export const ListeVoyages = (props) => {
+  useEffect(() => {
+    sortDestinations();
+    console.log(sorted);
+  });
+
   const [sorted, setSorted] = useState(props.destination);
 
   const compare = (a, b) => {
-    return a.date - b.date;
+    const dateA = a.date;
+    const dateB = b.date;
+
+    let compare = 0;
+    if (dateA === "" && dateB !== "") {
+      compare = 1;
+    } else if (dateA !== "" && dateB === "") {
+      compare = -1;
+    } else if (dateA < dateB) {
+      compare = -1;
+    } else if (dateA > dateB) {
+      compare = 1;
+    }
+
+    return compare;
   };
 
   const sortDestinations = () => {
@@ -15,8 +34,6 @@ export const ListeVoyages = (props) => {
   };
 
   const submitInfos = (id, info) => {
-    sortDestinations();
-    console.log(sorted);
     props.update(id, info);
   };
 
