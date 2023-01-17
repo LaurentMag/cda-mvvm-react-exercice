@@ -6,6 +6,7 @@ export const Voyage = (props) => {
 
   const createClock = () => {
     let time = props.clock(props.destinationObj.timeZone);
+
     setClock(time);
   };
 
