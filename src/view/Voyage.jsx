@@ -30,6 +30,7 @@ export const Voyage = (props) => {
   const submitInfos = (e) => {
     e.preventDefault();
     props.submit(props.destinationObj.id, info);
+    setInfo({date: "", nombre: ""});
   };
 
   return (
@@ -51,6 +52,7 @@ export const Voyage = (props) => {
             type="date"
             name="date"
             onChange={handleOnChange}
+            value={info.date}
           />
         </div>
         <div>
@@ -60,6 +62,7 @@ export const Voyage = (props) => {
             type="number"
             name="nombre"
             onChange={handleOnChange}
+            value={info.nombre}
           />
         </div>
         <button>Valider</button>

@@ -4,12 +4,12 @@ import {Voyage} from "./Voyage";
 //new Date().toISOString().split('T')[0]
 
 export const ListeVoyages = (props) => {
+  const [sorted, setSorted] = useState(props.destination);
+
   useEffect(() => {
     sortDestinations();
     console.log(sorted);
   });
-
-  const [sorted, setSorted] = useState(props.destination);
 
   const compare = (a, b) => {
     const dateA = a.date;
@@ -25,7 +25,6 @@ export const ListeVoyages = (props) => {
     } else if (dateA > dateB) {
       compare = 1;
     }
-
     return compare;
   };
 
