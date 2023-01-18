@@ -36,9 +36,26 @@ export const VoyageViewModel = () => {
     return hours + ":" + minutes + ":" + seconds;
   };
 
+  const compare = (a, b) => {
+    const dateA = a.date;
+    const dateB = b.date;
+
+    let compare = 0;
+    if (dateA === "" && dateB !== "") {
+      compare = 1;
+    } else if (dateA !== "" && dateB === "") {
+      compare = -1;
+    } else if (dateA < dateB) {
+      compare = -1;
+    } else if (dateA > dateB) {
+      compare = 1;
+    }
+    return compare;
+  };
+
   const updateDestination = (id, info) => {
     setDestination((prev) => {
-      return prev.map((dest) => {
+      const newArr = prev.map((dest) => {
         if (dest.id === id) {
           return {
             ...dest,
@@ -48,6 +65,7 @@ export const VoyageViewModel = () => {
           return dest;
         }
       });
+      return newArr.sort(compare);
     });
   };
 
